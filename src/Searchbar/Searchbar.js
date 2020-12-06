@@ -5,7 +5,8 @@ import {
   View,
   TextInput,
   Button,
-  FlatList
+  FlatList,
+  Text,
 } from 'react-native';
 
 const image = {url: './background_search_desktop.jpg'};
@@ -65,10 +66,10 @@ class Searchbar extends React.Component {
       return (
         <View style={styles.SearchBarSortOptionsLi}>
           <FlatList
-            keyExtractor={() => sortByOptionValue.id}
-            onPress={this.handleSortByChange.bind(this, sortByOptionValue)}>
-            {sortByOption}
-          </FlatList>
+            data={[{key: sortByOptionValue}]}
+            renderItem={({item}) => <Text>{item.key}</Text>}
+            onPress={this.handleSortByChange.bind(this, sortByOptionValue)}
+          />
         </View>
       );
     });
@@ -157,7 +158,6 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     fontSize: 0.77,
     fontWeight: 500,
-    marginRight: 0,
     marginBottom: 0.86,
   },
 
