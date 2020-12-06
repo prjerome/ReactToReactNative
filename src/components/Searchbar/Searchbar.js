@@ -9,7 +9,7 @@ import {
   Text,
 } from 'react-native';
 
-const image = {url: './background_search_desktop.jpg'};
+const image = {url: './background_search_mobile.webp'};
 
 class Searchbar extends React.Component {
   constructor(props) {
@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     height: 25,
   },

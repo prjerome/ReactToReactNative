@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, ScrollView} from 'react-native';
 import BusinessList from '../BusinessList/BusinessList';
-import SearchBar from '../SearchBar/Searchbar';
+import Searchbar from '../Searchbar/Searchbar';
 import Yelp from '../../util/Yelp';
 
 class App extends React.Component {
@@ -25,7 +25,7 @@ class App extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <Text style={styles.h1}>Local Businesses Search</Text>
-        <SearchBar searchYelp={this.searchYelp} />
+        <Searchbar searchYelp={this.searchYelp} />
         <BusinessList businesses={this.state.businesses} />
       </ScrollView>
     );

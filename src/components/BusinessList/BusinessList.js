@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     flexWrap: 'wrap',
     margin: 10,
-  }
-})
+  },
+});
 
 export default BusinessList;
