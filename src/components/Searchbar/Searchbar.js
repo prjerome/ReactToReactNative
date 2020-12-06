@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    backgroundRepeat: 'no-repeat',
     height: 25,
   },
 
