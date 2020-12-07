@@ -80,9 +80,9 @@ class Searchbar extends React.Component {
       <View style={styles.SearchBar}>
         <ImageBackground source={image} style={styles.SearchBar}>
           <View style={styles.SearchBarSortOptionsUl}>
-            <FlatList style={styles.SearchBarSortOptions}>
+            <View style={styles.SearchBarSortOptions}>
               {this.renderSortByOptions()}
-            </FlatList>
+            </View>
           </View>
           <View style={styles.SearchBarFields}>
             <TextInput
@@ -97,9 +97,11 @@ class Searchbar extends React.Component {
             />
           </View>
           <View className="SearchBar-submit">
-            <Button style={styles.SearchBarButton} onPress={this.handleSearch}>
-              Let's Go
-            </Button>
+            <Button
+              title="Let's Go"
+              style={styles.SearchBarButton}
+              onPress={this.handleSearch}
+            />
           </View>
         </ImageBackground>
       </View>
@@ -134,7 +136,7 @@ const styles = StyleSheet.create({
     paddingRight: 3,
     lineHeight: 1,
     textAlign: 'center',
-    fontWeight: 600,
+    fontWeight: '600',
     marginLeft: 2,
     marginRight: 2,
   },
@@ -155,7 +157,7 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
     borderRadius: 4,
     fontSize: 0.77,
-    fontWeight: 500,
+    fontWeight: '500',
     marginBottom: 0.86,
   },
 
@@ -165,7 +167,7 @@ const styles = StyleSheet.create({
     padding: 1,
     backgroundColor: '#cca353',
     color: '#ffffff',
-    fontWeight: 600,
+    fontWeight: '600',
   },
 });
 
