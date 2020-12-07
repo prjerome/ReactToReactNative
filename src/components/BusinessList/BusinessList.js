@@ -1,16 +1,31 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import Business from '../Business/Business';
 
 class BusinessList extends React.Component {
   render() {
-    return (
-      <ScrollView style={styles.businessList}>
-        {this.props.businesses.map((business) => {
-          return <Business business={business} key={business.id} />;
-        })}
-      </ScrollView>
-    );
+    return () => {
+      this.props.businesses.map((business) => {
+        let businessValues = {
+          businessProp: business,
+          id: business.id,
+        };
+        return (
+          <View style={styles.businessList}>
+            <FlatList
+              data={[{key: businessValues}]}
+              renderItem={({item}) => (
+                <Business
+                  business={item.businessProp}
+                  // eslint-disable-next-line no-shadow
+                  keyExtractor={({item}) => item.id}
+                />
+              )}
+            />
+          </View>
+        );
+      });
+    };
   }
 }
 
