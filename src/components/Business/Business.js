@@ -8,7 +8,7 @@ class Business extends React.Component {
         <View style={styles.imageContainer}>
           <Image
             style={styles.imageContainerImg}
-            src={this.props.business.imageSrc}
+            source={this.props.business.imageSrc}
           />
         </View>
         <Text>{this.props.business.name}</Text>

@@ -7,8 +7,11 @@ const Yelp = {
     const queryString = `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`;
 
     return fetch(queryString, {
+      method: 'GET',
       headers: {
+        Accept: 'application/json',
         Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
       },
     })
       .then((response) => {
@@ -29,6 +32,9 @@ const Yelp = {
             reviewCount: business['review_count'],
           }));
         }
+      })
+      .catch((error) => {
+        console.error(error);
       });
   },
 };
